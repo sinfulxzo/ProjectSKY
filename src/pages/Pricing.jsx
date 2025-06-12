@@ -1,9 +1,11 @@
-// Pricing.jsx
 import React from 'react';
-const Pricing = () => (
-  <div>
-    <h1>Pricing Plans</h1>
-    <p>Here are the subscription options.</p>
-  </div>
-);
+
+const Pricing = () => {
+  return (
+    <div className="text-2xl font-semibold text-center mt-10">
+      FlowOS Pricing Plans
+    </div>
+  );
+};
+
 export default Pricing;
