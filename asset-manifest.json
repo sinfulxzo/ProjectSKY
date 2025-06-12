@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ProjectSKY/static/css/main.397b2038.css",
+    "main.js": "/ProjectSKY/static/js/main.9e1e225a.js",
+    "static/js/453.b1722c0b.chunk.js": "/ProjectSKY/static/js/453.b1722c0b.chunk.js",
+    "index.html": "/ProjectSKY/index.html",
+    "main.397b2038.css.map": "/ProjectSKY/static/css/main.397b2038.css.map",
+    "main.9e1e225a.js.map": "/ProjectSKY/static/js/main.9e1e225a.js.map",
+    "453.b1722c0b.chunk.js.map": "/ProjectSKY/static/js/453.b1722c0b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.397b2038.css",
+    "static/js/main.9e1e225a.js"
+  ]
+}
