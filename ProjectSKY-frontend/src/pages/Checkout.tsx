@@ -139,6 +139,34 @@ const Checkout = () => {
     });
     // Here you would typically integrate with Stripe or another payment processor
   };
+  const handleCheckout = async () => {
+  const plan = planName.toUpperCase(); // "STARTER", "BUSINESS", etc.
+  const addons = selectedAddOns // e.g., ["WhatsApp", "AI Predictor"]
+
+  try {
+    const res = await fetch("http://localhost:5000/api/subscribe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+      body: JSON.stringify({ plan, addons }),
+    })
+
+    const data = await res.json()
+
+    if (res.ok) {
+      alert("Subscription saved successfully ✅")
+      // Redirect to dashboard or home
+      window.location.href = "/dashboard"
+    } else {
+      alert(data.error || "Something went wrong")
+    }
+  } catch (err) {
+    console.error("Checkout error:", err)
+    alert("Server error")
+  }
+}
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
