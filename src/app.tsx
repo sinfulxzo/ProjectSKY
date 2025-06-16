@@ -32,4 +32,8 @@ const App = () => (
   </QueryClientProvider>
 );
 
+<<<<<<< HEAD
 export default App;
+=======
+export default App;
+>>>>>>> cb4e315 (Login changes with dashboard)

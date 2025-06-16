@@ -18,11 +18,55 @@ const Signup = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [agreeToTerms, setAgreeToTerms] = useState(false);
 
+<<<<<<< HEAD
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle signup logic here
     console.log("Signup attempt:", { firstName, lastName, email, password, confirmPassword, agreeToTerms });
   };
+=======
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (password !== confirmPassword) {
+    alert("Passwords do not match ❌");
+    return;
+  }
+
+  if (!agreeToTerms) {
+    alert("Please agree to the Terms and Privacy Policy ❗");
+    return;
+  }
+
+  try {
+    const res = await fetch("http://localhost:5000/api/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        email,
+        password,
+        agreedToTerms: agreeToTerms
+      })
+    });
+
+    const data = await res.json();
+    console.log("Response:", res.status, data); // 👈 ADD THIS
+
+    if (res.ok) {
+      localStorage.setItem("token", data.token);
+      alert("Registered successfully ✅");
+    } else {
+      alert(data.error || "Registration failed");
+    }
+  } catch (err) {
+    console.error("Registration error:", err);
+    alert("Something went wrong.");
+  }
+};
+
+>>>>>>> cb4e315 (Login changes with dashboard)
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-navy-50 flex items-center justify-center p-4">

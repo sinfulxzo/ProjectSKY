@@ -7,6 +7,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Checkbox } from "@/components/ui/checkbox";
 import { Eye, EyeOff, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+<<<<<<< HEAD
+=======
+import { GoogleLogin } from "@react-oauth/google";
+
+>>>>>>> cb4e315 (Login changes with dashboard)
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -14,11 +19,66 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
 
+<<<<<<< HEAD
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle login logic here
     console.log("Login attempt:", { email, password, rememberMe });
   };
+=======
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
+
+  try {
+    const res = await fetch("http://localhost:5000/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ email, password })
+    })
+
+    const data = await res.json()
+
+    if (res.ok) {
+      localStorage.setItem("token", data.token)
+      alert("Login successful ✅")
+
+      // Optional: navigate to dashboard
+      // window.location.href = "/dashboard";
+    } else {
+      alert(data.error || "Login failed")
+    }
+  } catch (error) {
+    console.error("Login error:", error)
+    alert("Server error, please try again.")
+  }
+}
+;
+const handleGoogleLogin = async (credentialResponse: any) => {
+  try {
+    const res = await fetch("http://localhost:5000/api/google-login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token: credentialResponse.credential })
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      localStorage.setItem("token", data.token);
+      alert("Logged in with Google ✅");
+      // window.location.href = "/dashboard";
+    } else {
+      alert(data.error || "Google login failed");
+    }
+  } catch (err) {
+    console.error("Google login error:", err);
+    alert("Something went wrong during Google login.");
+  }
+};
+
+>>>>>>> cb4e315 (Login changes with dashboard)
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-navy-50 flex items-center justify-center p-4">
@@ -138,6 +198,7 @@ const Login = () => {
 
             {/* Social Login */}
             <div className="grid grid-cols-2 gap-3">
+<<<<<<< HEAD
               <Button
                 variant="outline"
                 className="h-11 border-gray-300 hover:bg-gray-50"
@@ -162,6 +223,24 @@ const Login = () => {
                 </svg>
                 Google
               </Button>
+=======
+              <div className="h-11 border border-gray-300 rounded-md flex items-center justify-center">
+  <GoogleLogin
+  onSuccess={(credentialResponse) => {
+    console.log("Google credentialResponse:", credentialResponse); // ✅ Add this
+    fetch("http://localhost:5000/api/google-login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token: credentialResponse.credential }),
+    });
+  }}
+  onError={() => alert("Google login failed")}
+  useOneTap={false}
+/>
+
+</div>
+
+>>>>>>> cb4e315 (Login changes with dashboard)
               <Button
                 variant="outline"
                 className="h-11 border-gray-300 hover:bg-gray-50"
