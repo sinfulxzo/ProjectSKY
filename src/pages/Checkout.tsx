@@ -139,8 +139,6 @@ const Checkout = () => {
     });
     // Here you would typically integrate with Stripe or another payment processor
   };
-<<<<<<< HEAD
-=======
   const handleCheckout = async () => {
   const plan = planName.toUpperCase(); // "STARTER", "BUSINESS", etc.
   const addons = selectedAddOns // e.g., ["WhatsApp", "AI Predictor"]
@@ -169,7 +167,6 @@ const Checkout = () => {
     alert("Server error")
   }
 }
->>>>>>> cb4e315 (Login changes with dashboard)
 
   return (
     <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">

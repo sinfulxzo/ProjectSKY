@@ -18,13 +18,6 @@ const Signup = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [agreeToTerms, setAgreeToTerms] = useState(false);
 
-<<<<<<< HEAD
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle signup logic here
-    console.log("Signup attempt:", { firstName, lastName, email, password, confirmPassword, agreeToTerms });
-  };
-=======
   const handleSubmit = async (e: React.FormEvent) => {
   e.preventDefault();
 
@@ -66,7 +59,6 @@ const Signup = () => {
   }
 };
 
->>>>>>> cb4e315 (Login changes with dashboard)
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-teal-50 via-white to-navy-50 flex items-center justify-center p-4">
