@@ -1,5 +1,6 @@
 
 import { Mail, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -7,28 +8,30 @@ const Footer = () => {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">Smart Ledger</h3>
+            <Link to="/">
+              <h3 className="text-2xl font-bold mb-4 hover:text-teal-400 transition-colors">Smart Ledger</h3>
+            </Link>
             <p className="text-gray-300 mb-6 max-w-md">
               Empowering Indian businesses with smart, simple, and powerful business management tools. 
               Join thousands of businesses growing with Smart Ledger.
             </p>
             <div className="flex space-x-4">
-              <div className="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center hover:bg-teal-500 transition-colors cursor-pointer">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center hover:bg-teal-500 transition-colors cursor-pointer">
                 <span className="text-sm font-bold">f</span>
-              </div>
-              <div className="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center hover:bg-teal-500 transition-colors cursor-pointer">
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center hover:bg-teal-500 transition-colors cursor-pointer">
                 <span className="text-sm font-bold">t</span>
-              </div>
-              <div className="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center hover:bg-teal-500 transition-colors cursor-pointer">
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-teal-600 rounded-lg flex items-center justify-center hover:bg-teal-500 transition-colors cursor-pointer">
                 <span className="text-sm font-bold">in</span>
-              </div>
+              </a>
             </div>
           </div>
 
           <div>
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-gray-300 hover:text-teal-400 transition-colors">Home</a></li>
+              <li><Link to="/" className="text-gray-300 hover:text-teal-400 transition-colors">Home</Link></li>
               <li><a href="#features" className="text-gray-300 hover:text-teal-400 transition-colors">Features</a></li>
               <li><a href="#pricing" className="text-gray-300 hover:text-teal-400 transition-colors">Pricing</a></li>
               <li><a href="#comparison" className="text-gray-300 hover:text-teal-400 transition-colors">Compare</a></li>
@@ -41,11 +44,11 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center">
                 <Mail className="w-5 h-5 text-teal-400 mr-3" />
-                <span className="text-gray-300">support@smartledger.in</span>
+                <a href="mailto:support@smartledger.in" className="text-gray-300 hover:text-teal-400 transition-colors">support@smartledger.in</a>
               </div>
               <div className="flex items-center">
                 <Phone className="w-5 h-5 text-teal-400 mr-3" />
-                <span className="text-gray-300">+91 99999 88888</span>
+                <a href="tel:+919999988888" className="text-gray-300 hover:text-teal-400 transition-colors">+91 99999 88888</a>
               </div>
               <div className="text-gray-300">
                 <p>Business Hours:</p>
@@ -61,9 +64,9 @@ const Footer = () => {
             © 2024 Smart Ledger. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-teal-400 text-sm transition-colors">Privacy Policy</a>
-            <a href="#" className="text-gray-400 hover:text-teal-400 text-sm transition-colors">Terms of Service</a>
-            <a href="#" className="text-gray-400 hover:text-teal-400 text-sm transition-colors">Cookie Policy</a>
+            <Link to="/privacy" className="text-gray-400 hover:text-teal-400 text-sm transition-colors">Privacy Policy</Link>
+            <Link to="/terms" className="text-gray-400 hover:text-teal-400 text-sm transition-colors">Terms of Service</Link>
+            <Link to="/cookies" className="text-gray-400 hover:text-teal-400 text-sm transition-colors">Cookie Policy</Link>
           </div>
         </div>
       </div>

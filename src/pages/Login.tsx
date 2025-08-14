@@ -159,7 +159,7 @@ const handleGoogleLogin = async (credentialResponse: any) => {
                   </Label>
                 </div>
                 <Link
-                  to="/forgot-password"
+                  to="/reset-password"
                   className="text-sm text-teal-600 hover:text-teal-700 font-medium"
                 >
                   Forgot password?
