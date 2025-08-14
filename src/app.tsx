@@ -16,6 +16,11 @@ import Offers from "./pages/Offers";
 import Orders from "./pages/Orders";
 import Transactions from "./pages/Transactions";
 import Profile from "./pages/Profile";
+import ConnectServices from "./pages/ConnectServices";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
+import Cookies from "./pages/Cookies";
+import ResetPassword from "./pages/ResetPassword";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +42,11 @@ const App = () => (
           <Route path="/dashboard/orders" element={<Orders />} />
           <Route path="/dashboard/transactions" element={<Transactions />} />
           <Route path="/dashboard/profile" element={<Profile />} />
+          <Route path="/connect-services" element={<ConnectServices />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/cookies" element={<Cookies />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

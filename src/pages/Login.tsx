@@ -33,9 +33,7 @@ const Login = () => {
     if (res.ok) {
       localStorage.setItem("token", data.token)
       alert("Login successful ✅")
-
-      // Optional: navigate to dashboard
-      // window.location.href = "/dashboard";
+      window.location.href = "/dashboard";
     } else {
       alert(data.error || "Login failed")
     }
@@ -58,7 +56,7 @@ const handleGoogleLogin = async (credentialResponse: any) => {
     if (res.ok) {
       localStorage.setItem("token", data.token);
       alert("Logged in with Google ✅");
-      // window.location.href = "/dashboard";
+      window.location.href = "/dashboard";
     } else {
       alert(data.error || "Google login failed");
     }

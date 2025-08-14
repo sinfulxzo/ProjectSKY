@@ -157,7 +157,6 @@ const Checkout = () => {
 
     if (res.ok) {
       alert("Subscription saved successfully ✅")
-      // Redirect to dashboard or home
       window.location.href = "/dashboard"
     } else {
       alert(data.error || "Something went wrong")

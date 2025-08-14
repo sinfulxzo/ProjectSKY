@@ -46,7 +46,7 @@ const DashboardMain = () => {
         <h1 className="text-2xl font-bold text-navy-800">Welcome to your Dashboard</h1>
         <Button variant="outline" className="flex items-center gap-2" onClick={() => navigate("/connect-services")}>
           <Link2 className="w-4 h-4" />
-          Connect Website or Amazon
+          Connect Services
         </Button>
       </div>
       

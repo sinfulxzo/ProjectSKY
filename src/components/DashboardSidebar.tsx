@@ -19,7 +19,7 @@ const menu = [
   { label: "Orders", to: "/dashboard/orders", icon: ListOrdered },
   { label: "Transactions", to: "/dashboard/transactions", icon: Wallet },
   { label: "User Profile", to: "/dashboard/profile", icon: User },
-  { label: "Connect Website/Amazon", to: "/connect-services", icon: Settings }
+  { label: "Connect Services", to: "/connect-services", icon: Settings }
 ];
 
 const DashboardSidebar = () => {

@@ -50,6 +50,7 @@ const Signup = () => {
     if (res.ok) {
       localStorage.setItem("token", data.token);
       alert("Registered successfully ✅");
+      window.location.href = "/dashboard";
     } else {
       alert(data.error || "Registration failed");
     }
